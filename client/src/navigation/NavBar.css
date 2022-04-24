@@ -83,6 +83,7 @@
         top: 70px;
         transition: all 0.5s ease-out;
         width: 100%;
+        z-index: 3;
     }
 
     .home,
