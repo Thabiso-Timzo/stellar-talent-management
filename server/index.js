@@ -12,7 +12,13 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.post('/sendMail', cors(), async (req, res) => {
-    let { text } = req.body
+    let { 
+        text,
+        firstName,
+        lastName,
+        email,
+        cellPhoneNumber
+    } = req.body
     const transport = nodemailer.createTransport({
         host: process.env.MAIL_HOST,
         port: process.env.MAIL_PORT,
@@ -24,7 +30,7 @@ app.post('/sendMail', cors(), async (req, res) => {
 
     await transport.sendMail({
         from: process.env.Mail_FROM,
-        to: "test@test.com",
+        to: "36d7be3b5f-c8e92e+1@inbox.mailtrap.io",
         subject: "Test email",
         html: `<div className="email" style="
         border: 1px solid black;
@@ -36,6 +42,9 @@ app.post('/sendMail', cors(), async (req, res) => {
 
         <h2>Here is your email</h2>
         <p>${text}</p>
+        <p>${firstName} ${lastName}</p>
+        <p>${email}</p>
+        <p>${cellPhoneNumber}</p>
 
         <p>All the best, Thabiso</p>
         </div>
