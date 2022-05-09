@@ -1,0 +1,20 @@
+.galleryWrap {
+    display: flex;
+    gap: 150px;
+    max-width: 950px;
+    margin: 10px;
+}
+
+.galleryWrap .single {
+    width: 50px;
+    cursor: pointer;
+}
+
+.galleryWrap .single img {
+    width: 450px;
+    height: 450px;  
+} 
+
+.galleryWrap .single img:hover {
+    transform: scale(1.02);
+}
