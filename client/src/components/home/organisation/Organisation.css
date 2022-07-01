@@ -1,0 +1,97 @@
+.hero {
+    width: 100%;
+    height: 250vh;
+    background: rgba(0, 0, 0, .7);
+    position: relative;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    background: url('../../../assets/kabu/1.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.hero .content {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    margin-left: 6rem;
+}
+
+.hero h1 {
+    margin-left: -100px;
+    color: #f8f8f8;
+}
+
+.hero .gold {
+    color: var(--primary-color);
+}
+
+/* content 2 */
+
+.hero .content2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    width: 70%;
+}
+
+.hero .content2 p {
+    margin: 1rem 0;
+    color: var(--primary-white);
+}
+
+/* content 3 */
+
+.hero .content3 {
+    position: absolute;
+    left: 10%;
+    top: 60%;
+    width: 70%;
+    padding: 1rem;
+}
+
+.hero h2 {
+    color: #f8f8f8;
+}
+
+.hero p {
+    color: #ffffff;
+    margin: 1rem 0;
+}
+
+@media screen and (max-width:940px) {
+    .hero .content {
+        margin-left: 1rem;
+    }
+
+    .hero h1 {
+        margin-left: 50%;
+    }
+
+    .hero .content2 {
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        background: rgba(255, 255, 255, .2);
+    }
+
+    .hero .content3 {
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, .2);
+    }
+}
