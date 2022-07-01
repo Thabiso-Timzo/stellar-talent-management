@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { BsFillArrowUpCircleFill, BsFillTelephoneFill } from 'react-icons/bs'
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiFacebook } from 'react-icons/fi'
@@ -8,6 +9,11 @@ import './Footer.css'
 import logo1 from '../../assets/logo/logo1.png'
 
 const Footer = () => {
+    const navigate = useNavigate()
+    const home = () => navigate('/')
+    const about = () => navigate('/about')
+    const contact = () => navigate('/contact')
+
   return (
     <div className='footer'>
         <div className="container">
@@ -24,9 +30,9 @@ const Footer = () => {
             <div className="col-container">
                 <div className="col">
                     <h3>Navigation</h3>
-                    <p>Home</p>
-                    <p>About</p>
-                    <p>Contact</p>
+                    <p onClick={home} style={{cursor: 'pointer'}}>Home</p>
+                    <p onClick={about} style={{cursor: 'pointer'}}>About</p>
+                    <p onClick={contact} style={{cursor: 'pointer'}}>Contact</p>
                 </div>
                 
                 <div className="col">
