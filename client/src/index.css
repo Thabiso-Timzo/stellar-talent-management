@@ -73,8 +73,8 @@ button {
 }
 
 button:hover {
-  background-color: #47dcff;
-  border: 1px solid #47dcff;
+  background-color: #4e1600;
+  border: 1px solid gold;
 }
 
 @media screen and (max-width: 940px) {
