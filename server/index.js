@@ -18,41 +18,41 @@ app.get('/', () => {
 })
 
 app.post('/api/email', (req, res) => {
-    let data = req.body
-    let smtpTransport = nodemailer.createTransport({
-        service: 'Gmail',
-        port: 465,
+    const contactEmail = nodemailer.createTransport({
+        service: 'gmail',
         auth: {
-            user: 'mr.tt.hlatshwayo@gmail.com',
-            pass: 'Thabiso@7028'
+            user: "mr.tt.hlatshwayo@gmail.com",
+            pass: "vrppippqmodkedsc",
+        },
+    });
+
+    contactEmail.verify((error) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("Ready to Send");
         }
     });
 
-    let mailOptions = {
-        from: data.email,
-        to: 'mr.tt.hlatshwayo@gmail.com',
-        subject: `Message from ${data.name}`,
-        html: `
-            <h3>Information</h3>
-                <ul>
-                    <li>${data.name}</li>
-                    <li>${data.email}</li>
-                </ul>
-
-            <h3>Message</h3>
-            <p>${data.message}</p>
-        `
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message; 
+    const mail = {
+        from: name,
+        to: "mr.tt.hlatshwayo@gmail.com",
+        subject: "Contact Form Submission",
+        html: `<p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${message}</p>`,
     };
 
-    smtpTransport.sendMail(mailOptions, (error, response) => {
+    contactEmail.sendMail(mail, (error) => {
         if (error) {
-            res.send(error);
+            res.json({ status: "ERROR" });
         } else {
-            res.send('success');
+            res.json({ status: "Message Sent" });
         }
-    })
-
-    smtpTransport.close();
+    });
 })
 
 app.listen(port, () => {
