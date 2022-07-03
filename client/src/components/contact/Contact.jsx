@@ -21,20 +21,9 @@ const Contact = () => {
         axios.post('/api/email', data)
         .then(response => {
             setSent(true)
-            resetForm()
         }).catch(() => {
             console.log('Message not sent!')
         })
-    }
-
-    const resetForm = () => {
-        setName('')
-        setEmail('')
-        setMessage('')
-
-        setTimeout(() => {
-            setSent(false)
-        }, 3000)
     }
 
   return (
@@ -76,7 +65,7 @@ const Contact = () => {
                             onChange={(e) => setMessage(e.target.value)}
                         />
                     </div>
-                    <div className={sent ? 'msg msgAppear' : 'msg'}>Message has been sent</div>
+                    {sent ? <div className="sentMessage">Message sent</div> : null}
                     <button>Submit</button>
                 </form>
             </div>
