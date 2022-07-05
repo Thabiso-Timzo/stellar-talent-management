@@ -16,7 +16,6 @@ const Contact = () => {
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormValues({...formValues, [name]: value})
-        console.log(formValues)
     }
     
     const formSubmit = (e) => { 
