@@ -19,10 +19,10 @@ app.get('/', () => {
 
 app.post('/api/email', (req, res) => {
     const contactEmail = nodemailer.createTransport({
-        service: process.env.MAIL_SERVICE,
+        service: 'gmail',
         auth: {
-            user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASS,
+            user: 'startalentmp@gmail.com',
+            pass: 'gmxtftzgxznxqolz',
         },
     });
 
@@ -39,7 +39,7 @@ app.post('/api/email', (req, res) => {
     const message = req.body.message; 
     const mail = {
         from: name,
-        to: process.env.MAIL_USER,
+        to: 'startalentmp@gmail.com',
         subject: "Contact Form Submission",
         html: `
             <h3>Personal information</h3>
