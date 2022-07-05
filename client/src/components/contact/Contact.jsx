@@ -71,6 +71,7 @@ const Contact = () => {
                             type="text" 
                             placeholder='Enter your name'
                             name='name'
+                            id='name'
                             value={formValues.name}
                             onChange={handleChange}
                         />
@@ -83,6 +84,7 @@ const Contact = () => {
                             type="email" 
                             placeholder='Enter your email'
                             name='email'
+                            id='email'
                             value={formValues.email}
                             onChange={handleChange}
                         />
@@ -95,6 +97,7 @@ const Contact = () => {
                             rows='10' 
                             placeholder='Enter your message'
                             name='message'
+                            id='message'
                             value={formValues.message}
                             onChange={handleChange}
                         />
