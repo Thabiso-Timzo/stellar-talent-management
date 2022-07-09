@@ -1,17 +1,34 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const nodemailer = require('nodemailer');
-require('dotenv').config();
+const helmet = require('helmet'); 
+const http = require('http');
+const compression = require('compression');
+
+const config = require('./config/index');
+
+const { 
+    port, 
+    allowedDomains, 
+    email_services, 
+    email_host, 
+    email_port,
+    email_user,
+    email_pass 
+} = config;
 
 const app = express();
-const port = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({origin: allowedDomains, credentials: true}));
 app.use(morgan('tiny')); 
+app.use(helmet());
+app.use(compression());
 
 app.get('/', () => {
     resizeBy.send('Welcome to my form')
@@ -19,10 +36,13 @@ app.get('/', () => {
 
 app.post('/api/email', (req, res) => {
     const contactEmail = nodemailer.createTransport({
-        service: 'gmail',
+        service: email_services,
+        host: email_host,
+        port: email_port,
+        secure: true,
         auth: {
-            user: 'startalentmp@gmail.com',
-            pass: 'gmxtftzgxznxqolz',
+            user: email_user,
+            pass: email_pass,
         },
     });
 
@@ -39,7 +59,7 @@ app.post('/api/email', (req, res) => {
     const message = req.body.message; 
     const mail = {
         from: name,
-        to: 'startalentmp@gmail.com',
+        to: email_user,
         subject: "Contact Form Submission",
         html: `
             <h3>Personal information</h3>
@@ -57,8 +77,10 @@ app.post('/api/email', (req, res) => {
             res.json({ status: "Message Sent" });
         }
     });
-})
+}) 
 
-app.listen(port, () => {
+const server = http.createServer(app);
+
+server.listen(port, () => {
     console.log(`Server is up and running on port: ${port}`);
 })
