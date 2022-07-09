@@ -43,15 +43,15 @@ const Footer = () => {
                 </div>
 
                 <div className="col">
-                    <h3>Contact details</h3>
-                    <p><BsFillTelephoneFill /> 0610881693</p>
-                    <p><FaWhatsapp /> 0844682255</p>
-                    <p>startalentmp@gmail.com</p>
+                    <h3>NPC registration</h3>
+                    <p>NPC registration number: 2022/366051/08</p>
                 </div>
 
                 <div className="col">
-                    <h3>NPC registration</h3>
-                    <p>NPC registration number: 2022/366051/08</p>
+                    <h3>Contact details</h3>
+                    <p><BsFillTelephoneFill /> 0610881693</p>
+                    <p><FaWhatsapp /> 0844682255</p>
+                    <p>info@startalentmanagement.org.za</p>
                 </div>
                     
                 <form>
