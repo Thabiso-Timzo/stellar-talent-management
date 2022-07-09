@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 import './Contact.css'
+import { API_URL } from '../../config/index'
 
 const Contact = () => {
     const initialValues = { 
@@ -28,7 +29,7 @@ const Contact = () => {
             message: formValues.message,
         }
 
-        axios.post('/api/email', data)
+        axios.post(API_URL, data)
         .then(response => {
              setFormValues({ sent: true });
         }).catch(() => {
