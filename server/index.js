@@ -30,10 +30,6 @@ app.use(morgan('tiny'));
 app.use(helmet());
 app.use(compression());
 
-app.get('/', () => {
-    resizeBy.send('Welcome to my form')
-})
-
 app.post('/api/email', (req, res) => {
     const contactEmail = nodemailer.createTransport({
         service: email_services,
