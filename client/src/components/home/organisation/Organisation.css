@@ -45,7 +45,7 @@
     justify-content: center;
     position: absolute;
     left: 10%;
-    top: 40%;
+    top: 30%;
     width: 70%;
 }
 
@@ -59,7 +59,7 @@
 .hero .content3 {
     position: absolute;
     left: 10%;
-    top: 60%;
+    top: 65%;
     width: 70%;
     padding: 1rem;
 }
@@ -80,6 +80,7 @@
 
     .hero h1 {
         margin-left: 50%;
+        font-size: 30px;
     }
 
     .hero .content2 {
