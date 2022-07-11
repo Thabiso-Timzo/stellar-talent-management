@@ -41,7 +41,7 @@
 }
 
 .footer h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 
@@ -55,11 +55,13 @@
 .footer h3 {
     margin: 1rem 0 2rem 0;
     text-transform: uppercase;
+    font-size: 1.2rem;
 }
 
 
 .footer p {
     margin: .5rem 0;
+    font-size: 0.7rem;
 }
 
 .footer form {
@@ -107,6 +109,7 @@
 @media screen and (max-width: 940px) {
     .footer {
         height: 100%;
+        width: 100%;
     }
 
     .footer .col-container {
@@ -115,5 +118,17 @@
 
     .footer form {
         grid-column: 1 / span 2;
+    }
+
+    .footer h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer h3 {
+        font-size: 1rem;
+    }
+
+    .footer p {
+        font-size: 0.6rem
     }
 }

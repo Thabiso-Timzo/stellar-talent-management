@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { BsFillArrowUpCircleFill, BsFillTelephoneFill } from 'react-icons/bs'
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiFacebook } from 'react-icons/fi'
+import { MdAlternateEmail } from 'react-icons/md'
 import { Link } from 'react-scroll'
 
 import './Footer.css'
@@ -51,7 +52,7 @@ const Footer = () => {
                     <h3>Contact details</h3>
                     <p><BsFillTelephoneFill /> 0610881693</p>
                     <p><FaWhatsapp /> 0844682255</p>
-                    <p>info@startalentmanagement.org.za</p>
+                    <p><MdAlternateEmail /> info@startalentmanagement.org.za</p>
                 </div>
                     
                 <form>
