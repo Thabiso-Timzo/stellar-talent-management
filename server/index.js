@@ -8,6 +8,7 @@ const nodemailer = require('nodemailer');
 const helmet = require('helmet'); 
 const http = require('http');
 const compression = require('compression');
+const path = require('path');
 
 const config = require('./config/index');
 
@@ -29,6 +30,8 @@ app.use(cors({origin: allowedDomains, credentials: true}));
 app.use(morgan('tiny')); 
 app.use(helmet());
 app.use(compression());
+
+app.use(express.static(path.join(__dirname, "public_html/index.html")));
 
 app.post('/api/email', (req, res) => {
     const contactEmail = nodemailer.createTransport({
