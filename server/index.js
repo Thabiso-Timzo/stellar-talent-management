@@ -32,7 +32,7 @@ app.use(compression());
 
 app.use(express.static("public_html"));
 
-app.post('/api/email', (req, res) => {
+app.post('/', (req, res) => {
     const contactEmail = nodemailer.createTransport({
         service: email_services,
         host: email_host,
