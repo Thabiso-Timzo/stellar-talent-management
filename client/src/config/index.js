@@ -11,5 +11,5 @@ const isLocalhost = Boolean(
 export const API_URL = isLocalhost ? (
     "http://localhost:5000/"
 ) : (
-    "https://server.startalentmanagement.org.za/"
+    "/"
 )
