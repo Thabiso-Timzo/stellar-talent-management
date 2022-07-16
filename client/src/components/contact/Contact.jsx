@@ -29,7 +29,7 @@ const Contact = () => {
             message: formValues.message,
         }
 
-        axios.post(API_URL, data)
+        axios.post("/", data)
         .then(response => {
              setFormValues({ sent: true });
         }).catch(() => {
@@ -103,7 +103,7 @@ const Contact = () => {
                         />
                     </div>
                     <p>{ formErrors.message }</p>
-                    {formValues.sent ? <div className="sentMessage">Message sent</div> : null}
+                    {formValues.sent ? <div className="sentMessage">Message sent</div> : <div className="sentMessage">Message not sent</div>}
                     <button onClick={formSubmit}>Submit</button>
                 </form>
             </div>
